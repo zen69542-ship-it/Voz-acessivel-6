@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#14171F">
+<title>Acessibilidade — Convive</title>
+<meta name="description" content="Conceitos de acessibilidade e recursos reais ativos no site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="libras.css">
+<link rel="stylesheet" href="motor.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="brand-icon" viewBox="0 0 24 24">
+      <circle cx="9" cy="12" r="7.5"/>
+      <circle cx="15" cy="12" r="7.5" opacity=".55"/>
+    </symbol>
+    <symbol id="inclusion-icon" viewBox="0 0 100 100">
+      <circle class="ii-ring" cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="4" pathLength="1"/>
+      <path class="ii-line" d="M21 37 Q50 59 79 37" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <path class="ii-line" d="M23 38 L63 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <path class="ii-line" d="M77 38 L37 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <path class="ii-line" d="M36 81 Q50 87 64 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <circle class="ii-node" cx="50" cy="17" r="13" fill="var(--paper)" stroke="var(--paper)" stroke-width="7"/>
+      <circle class="ii-node ii-fill" cx="50" cy="17" r="11"/>
+      <circle class="ii-node" cx="21" cy="37" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="21" cy="37" r="7"/>
+      <circle class="ii-node" cx="79" cy="37" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="79" cy="37" r="7"/>
+      <circle class="ii-node" cx="36" cy="81" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="36" cy="81" r="7"/>
+      <circle class="ii-node" cx="64" cy="81" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="64" cy="81" r="7"/>
+    </symbol>
+  </defs>
+</svg>
+<a href="#main" class="skip-link">Pular para o conteúdo</a>
+<div class="intro-loader" id="introLoader">
+  <button class="intro-skip" id="introSkip" type="button">Pular introdução</button>
+  <div class="intro-content" aria-hidden="true">
+    <svg class="intro-inclusion" id="introInclusion" viewBox="0 0 100 100"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>
+    <span class="intro-mark" id="introMark"><svg class="spark" viewBox="0 0 24 24"><use href="#brand-icon" xlink:href="#brand-icon"></use></svg><span id="introMarkText">Convive</span></span>
+    <p class="intro-tagline" id="introTagline">Conhecimento para todos, do jeito de cada um.</p>
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<header class="topbar">
+  <div class="wrap bar">
+    <a href="index.html" class="brand"><span class="mk"><svg class="spark" viewBox="0 0 24 24"><use href="#brand-icon" xlink:href="#brand-icon"></use></svg></span>Convive</a>
+    <button class="navtoggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path class="bar bar1" d="M3 7h18" stroke="#14171F" stroke-width="1.8" stroke-linecap="round"/>
+        <path class="bar bar2" d="M3 12h18" stroke="#14171F" stroke-width="1.8" stroke-linecap="round"/>
+        <path class="bar bar3" d="M3 17h18" stroke="#14171F" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <nav class="navlinks" id="navLinks">
+      <a href="index.html">Início</a>
+      <a href="missao.html">Missão</a>
+      <a href="acessibilidade.html" aria-current="page">Acessibilidade</a>
+      <a href="tecnologia.html">Tecnologia</a>
+      <a href="equipe.html">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+<div class="cb-banner" id="cbBanner" role="status" aria-live="polite">🎨 <span id="cbBannerText">Modo de cor ativo</span></div>
+<div class="epilepsy-banner" id="epilepsyBanner" role="status" aria-live="polite">⚠️ <span id="epilepsyBannerText">Modo epilepsia ativo</span></div>
+<main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Acessibilidade não é um botão no canto da tela</h1>
+      <p>Os conceitos, a central de acessibilidade e os recursos que este site realmente usa — não uma lista descritiva, a própria ferramenta em funcionamento.</p>
+      <button class="page-listen" id="pageListen2"><svg class="listen-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".55"/></svg>Ouvir esta página</button>
+    </div>
+  </div>
+
+  <section id="conceitos" data-narrate="Inclusão não é apenas acessibilidade">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Termos que não são sinônimos</span>
+        <h2>Inclusão não é apenas acessibilidade</h2>
+        <p>É comum usar essas palavras como se fossem a mesma coisa. Não são — e a diferença importa na hora de avaliar se um ambiente (escolar, digital ou de trabalho) é realmente inclusivo.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card"><h3>Acessibilidade</h3><p style="font-size:14px; color:var(--ink-soft);">A remoção de barreiras concretas — uma rampa, um leitor de tela, uma legenda. É o meio.</p></div>
+        <div class="cat-card"><h3>Inclusão</h3><p style="font-size:14px; color:var(--ink-soft);">O processo de garantir participação plena e real, não só a presença. É o objetivo.</p></div>
+        <div class="cat-card"><h3>Equidade</h3><p style="font-size:14px; color:var(--ink-soft);">Oferecer a cada pessoa o que ela precisa para ter a mesma oportunidade — não necessariamente a mesma coisa.</p></div>
+        <div class="cat-card"><h3>Usabilidade</h3><p style="font-size:14px; color:var(--ink-soft);">O quão fácil é usar algo, para qualquer pessoa. Acessibilidade é usabilidade estendida a quem usa tecnologia assistiva.</p></div>
+        <div class="cat-card"><h3>Design universal</h3><p style="font-size:14px; color:var(--ink-soft);">Projetar para o maior número possível de pessoas desde o início, em vez de criar uma versão "adaptada" depois.</p></div>
+        <div class="cat-card"><h3>Pertencimento</h3><p style="font-size:14px; color:var(--ink-soft);">A sensação de poder participar sem esconder quem se é. É o teste real de que a inclusão funcionou.</p></div>
+      </div>
+      <div class="quote-block">
+        <p>Existe uma diferença entre "ajudar alguém" e "garantir que alguém tenha condições de participar". A primeira é um gesto pontual; a segunda é uma responsabilidade estrutural.</p>
+        <span>Por que inclusão não deveria ser tratada como favor</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="nao-e-so-botao" style="background:var(--surface);" data-narrate="Por que um widget de acessibilidade não é suficiente">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Uma crítica necessária</span>
+        <h2>Por que um botão de acessibilidade sozinho não resolve</h2>
+        <p>É cada vez mais comum ver sites com um ícone flutuante de "acessibilidade" no canto da tela. Esses widgets ajudam, mas não substituem um site construído de forma acessível desde a base — porque um widget de terceiros não corrige a estrutura do HTML por trás dele.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card"><h3>HTML semântico</h3><p style="font-size:14px; color:var(--ink-soft);">Usar &lt;button&gt;, &lt;nav&gt;, &lt;h1&gt;-&lt;h2&gt; corretamente — não &lt;div&gt; genérica para tudo.</p></div>
+        <div class="cat-card"><h3>Hierarquia de títulos</h3><p style="font-size:14px; color:var(--ink-soft);">Um leitor de tela navega pela estrutura de títulos; pular níveis quebra essa navegação.</p></div>
+        <div class="cat-card"><h3>Labels em formulários</h3><p style="font-size:14px; color:var(--ink-soft);">Todo campo precisa de um &lt;label&gt; associado — sem isso, quem usa leitor de tela não sabe o que preencher.</p></div>
+        <div class="cat-card"><h3>Texto alternativo</h3><p style="font-size:14px; color:var(--ink-soft);">Toda imagem com informação relevante precisa de um alt descritivo, não genérico.</p></div>
+        <div class="cat-card"><h3>Foco visível</h3><p style="font-size:14px; color:var(--ink-soft);">Quem navega por teclado precisa ver, a cada Tab, exatamente onde está.</p></div>
+        <div class="cat-card"><h3>Contraste no CSS</h3><p style="font-size:14px; color:var(--ink-soft);">Nenhum widget conserta um texto cinza claro sobre fundo branco definido no código-fonte.</p></div>
+      </div>
+      <p style="color:var(--ink-soft); font-size:15px; margin-top:20px; max-width:70ch;">Por isso a barra de acessibilidade deste site é um complemento — o trabalho de base (semântica, contraste, navegação por teclado) já está na estrutura de cada página, não depende do painel para existir.</p>
+    </div>
+  </section>
+
+  <section id="recursos" data-narrate="Recursos de acessibilidade ativos neste site">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Não é só teoria</span>
+        <h2>Recursos de acessibilidade ativos neste site</h2>
+        <p>Toque no botão preto no canto inferior direito da tela. Ele abre um painel real e funcional — não é uma lista descritiva, é a própria ferramenta.</p>
+      </div>
+      <div class="demo-box">
+        <div class="di"><svg class="fab-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg></div>
+        <p><strong>Experimente agora</strong>Clique no botão de acessibilidade e teste: aumentar a fonte, ativar alto contraste, ativar o modo seguro para epilepsia e fotossensibilidade (muda imagens e cores da página inteira), trocar a paleta para os sete tipos de daltonismo, ouvir esta página em voz alta e ativar a fonte facilitada para dislexia.</p>
+      </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <span class="eyebrow">Cobertura completa</span>
+        <h2>Perfis contemplados pelo projeto</h2>
+        <p>Perfis diferentes podem precisar de combinações diferentes de recursos — por isso os ajustes são independentes entre si, e podem ser ativados em qualquer combinação.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card"><h3>Cegueira</h3><div class="tags"><span class="tag">Leitura em voz alta</span><span class="tag">Leitor de tela</span><span class="tag">Navegação por teclado</span></div></div>
+        <div class="cat-card"><h3>Baixa visão</h3><div class="tags"><span class="tag">Fonte ampliável</span><span class="tag">Alto contraste</span></div></div>
+        <div class="cat-card"><h3>Daltonismo (7 tipos)</h3><div class="tags"><span class="tag">Protanopia</span><span class="tag">Protanomalia</span><span class="tag">Deuteranopia</span><span class="tag">Deuteranomalia</span><span class="tag">Tritanopia</span><span class="tag">Tritanomalia</span><span class="tag">Acromatopsia</span></div></div>
+        <div class="cat-card"><h3>Epilepsia / fotossensibilidade</h3><div class="tags"><span class="tag">Zero animação</span><span class="tag">Imagens dessaturadas</span><span class="tag">Cores neutralizadas</span></div></div>
+        <div class="cat-card"><h3>Surdez</h3><div class="tags"><span class="tag">Conteúdo textual completo</span><span class="tag">VLibras (governo federal)</span><span class="tag">Sistema de Libras próprio</span><span class="tag">Sem dependência de áudio</span></div></div>
+        <div class="cat-card"><h3>Deficiência motora</h3><div class="tags"><span class="tag">Toque ampliado</span><span class="tag">Sem gestos</span><span class="tag">Cursor grande</span><span class="tag">Confirmação de ações</span><span class="tag">Tempo estendido</span></div></div>
+        <div class="cat-card"><h3>Dificuldades cognitivas</h3><div class="tags"><span class="tag">Interface simples</span><span class="tag">Linguagem clara</span></div></div>
+        <div class="cat-card"><h3>Dislexia</h3><div class="tags"><span class="tag">Fonte facilitada</span><span class="tag">Texto para voz</span></div></div>
+        <div class="cat-card"><h3>Autismo / sensorial</h3><div class="tags"><span class="tag">Baixo estímulo</span><span class="tag">Sem animação</span></div></div>
+      </div>
+
+      <div class="section-head" style="margin-top:56px;">
+        <span class="eyebrow">Por que o modo seguro existe</span>
+        <h2>Os três principais tipos de crise epiléptica</h2>
+        <p>Nem toda epilepsia se parece com o que a mídia costuma mostrar. Entender essa diferença é o motivo pelo qual o "Modo seguro" deste site desliga <em>toda</em> animação e pisca-pisca, e não só vídeos óbvios.</p>
+      </div>
+
+      <figure class="epilepsy-diagram-wrap">
+        <svg class="epilepsy-diagram" viewBox="0 0 780 230" aria-hidden="true" focusable="false">
+                    <g style="color:var(--accent-human);">
+            <circle cx="130" cy="130" r="65" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M130,65 Q116,98 130,130 Q144,162 130,195" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="2"/>
+            <circle cx="130" cy="130" r="6" fill="currentColor"/>
+            <circle cx="130" cy="130" r="18" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 4" opacity=".7"/>
+            <circle cx="130" cy="130" r="34" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 5" opacity=".45"/>
+            <circle cx="130" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 6" opacity=".25"/>
+          </g>
+                    <g style="color:var(--accent);">
+            <circle cx="390" cy="130" r="65" fill="currentColor" fill-opacity=".22" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M390,65 Q376,98 390,130 Q404,162 390,195" fill="none" stroke="currentColor" stroke-opacity=".55" stroke-width="2"/>
+            <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <line x1="458" y1="130" x2="474" y2="130"/>
+              <line x1="438.1" y1="178.1" x2="449.4" y2="189.4"/>
+              <line x1="390" y1="198" x2="390" y2="214"/>
+              <line x1="341.9" y1="178.1" x2="330.6" y2="189.4"/>
+              <line x1="322" y1="130" x2="306" y2="130"/>
+              <line x1="341.9" y1="81.9" x2="330.6" y2="70.6"/>
+              <line x1="390" y1="62" x2="390" y2="46"/>
+              <line x1="438.1" y1="81.9" x2="449.4" y2="70.6"/>
+            </g>
+          </g>
+                    <g style="color:var(--accent-warm);">
+            <circle cx="650" cy="130" r="65" fill="none" stroke="currentColor" stroke-width="2.5"/>
+            <path d="M650,65 Q636,98 650,130 Q664,162 650,195" fill="none" stroke="currentColor" stroke-opacity=".5" stroke-width="2"/>
+            <circle cx="678" cy="115" r="16" fill="currentColor"/>
+            <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <line x1="694" y1="115" x2="708" y2="115"/>
+              <line x1="686" y1="128.9" x2="693" y2="141"/>
+              <line x1="670" y1="128.9" x2="663" y2="141"/>
+              <line x1="662" y1="115" x2="648" y2="115"/>
+              <line x1="670" y1="101.1" x2="663" y2="89"/>
+              <line x1="686" y1="101.1" x2="693" y2="89"/>
+            </g>
+          </g>
+        </svg>
+        <div class="epilepsy-diagram-legend">
+          <div><span class="dot" style="background:var(--accent-human);"></span>Crise de ausência — breve e generalizada</div>
+          <div><span class="dot" style="background:var(--accent);"></span>Crise tônico-clônica — os dois hemisférios juntos</div>
+          <div><span class="dot" style="background:var(--accent-warm);"></span>Crise focal — uma única região</div>
+        </div>
+        <figcaption>Representação esquemática e simplificada da atividade elétrica cerebral — não é uma imagem médica real, apenas um recurso didático para diferenciar os três tipos.</figcaption>
+      </figure>
+
+      <div class="cat-grid">
+        <div class="cat-card"><h3>Crise de ausência</h3><p style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Também chamada de "pequeno mal". Um breve "apagão" de poucos segundos, com o olhar fixo, sem queda — comum em crianças e fácil de passar despercebido.</p></div>
+        <div class="cat-card"><h3>Crise tônico-clônica</h3><p style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Conhecida como "grande mal". Envolve rigidez do corpo seguida de abalos musculares e perda de consciência — é o tipo mais associado popularmente à palavra "epilepsia".</p></div>
+        <div class="cat-card"><h3>Crise focal</h3><p style="font-size:14px; color:var(--ink-soft); margin-top:4px;">Começa em uma região específica do cérebro. Pode ou não afetar a consciência, e os sintomas variam bastante conforme a área cerebral envolvida.</p></div>
+      </div>
+      <p style="color:var(--ink-soft); font-size:13px; margin-top:16px;">Conteúdo educativo e simplificado — não substitui orientação médica. Fontes: classificação de crises da ILAE (International League Against Epilepsy) e Manual MSD.</p>
+
+      <figure style="margin:56px auto 0; max-width:480px; text-align:center;">
+        <div style="border:1px solid var(--line); border-radius:var(--radius-md); overflow:hidden; background:#fff; padding:20px;">
+          <img src="img/diversidade-wheel.png" width="610" height="350" loading="lazy" decoding="async" alt="Diagrama circular com o texto central 'Inclusão, Diversidade, Igualdade', dividido em setores: origem raça e etnia, família e gerações, gênero, LGBTI+ e simpatizantes, pessoas com deficiência, e as ações seja aberto, pergunte, respeite, aprecie, aprenda e ouça." style="width:100%; height:auto; display:block; filter:none; object-fit:contain;">
+        </div>
+        <figcaption class="credit-note">Diagrama de referência sobre os pilares de diversidade e inclusão, usado como material de apoio conceitual pelo grupo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="aprenda-libras" style="background:var(--surface);" data-narrate="Aprenda Libras">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Área educativa</span>
+        <h2>Aprenda Libras</h2>
+        <p>Libras é uma língua completa, com gramática própria — não um código para o português. Além do sistema próprio deste site, também está ativo o <strong>VLibras</strong>, o tradutor automático oficial do Governo Federal (botão na borda direita da tela) — os vídeos de cada sinal abaixo entram assim que forem gravados e validados; nenhum sinal é inventado ou representado incorretamente enquanto isso.</p>
+        <p style="color:var(--ink-soft); font-size:15px; margin-top:14px;">Segundo o Censo Demográfico 2022 do IBGE, cerca de 2,6 milhões de brasileiros têm dificuldade para ouvir mesmo usando aparelho auditivo — uma população maior que a de várias capitais do país, e para a qual Libras costuma ser a língua de acesso mais direta ao conteúdo desta página.</p>
+      </div>
+      <div class="libras-glossary" id="librasGlossary"></div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface);" data-narrate="Até onde o Convive consegue chegar">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Maturidade, não perfeição</span>
+        <h2>Até onde o Convive consegue chegar?</h2>
+        <p>Seria fácil terminar este site dizendo que "resolvemos a acessibilidade". Não é verdade, e não queremos vender essa ideia.</p>
+      </div>
+      <div class="txt" style="max-width:76ch;">
+        <p>Acessibilidade digital é um tema muito mais amplo do que os botões e filtros visuais deste painel. Cada pessoa tem uma combinação diferente de necessidades — duas pessoas com baixa visão, por exemplo, podem precisar de ajustes completamente diferentes entre si. Muitas vezes, o recurso mais importante nem está aqui: é uma tecnologia assistiva que a própria pessoa já usa no computador ou celular dela, e que este site precisa apenas não atrapalhar.</p>
+        <p>Acessibilidade também depende do conteúdo, não só da interface: um texto confuso continua confuso mesmo com contraste perfeito. E nenhuma ferramenta automática — nem esta — substitui testar com pessoas reais, que é exatamente o que ainda não fizemos nesta fase (ver "Como testamos" na página de Tecnologia).</p>
+        <p>O Convive é um projeto de estudantes, em evolução, não um produto acabado. O que apresentamos aqui é um conjunto de recursos que funcionam de verdade, hoje — não uma promessa de que o problema da acessibilidade foi resolvido.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <span class="fb"><svg class="spark" viewBox="0 0 24 24"><use href="#brand-icon" xlink:href="#brand-icon"></use></svg>Convive</span>
+        <p>Inclusão explicada e demonstrada na prática — não só descrita. Um projeto de acessibilidade digital feito por estudantes, para estudantes.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-h">Navegue</span>
+        <a href="missao.html">Missão</a>
+        <a href="acessibilidade.html">Acessibilidade</a>
+        <a href="tecnologia.html">Tecnologia</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-h">Projeto</span>
+        <a href="equipe.html">Equipe</a>
+        <a href="contato.html">Contato</a>
+        <a href="legislacao.html">Legislação</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="fm">Feira Tecnológica 2026 — ETEC Guariba · Programação para Internet</span>
+      <span class="fm">Código aberto · sem coleta de dados pessoais</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-wrap" id="toastWrap" role="status" aria-live="polite"></div>
+
+<button class="totop" id="toTop" aria-label="Voltar ao topo">↑</button>
+
+<div class="a11y-bar">
+  <button class="a11y-fab" id="a11yFab" aria-label="Abrir painel de acessibilidade" aria-expanded="false"><svg class="fab-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg></button>
+  <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Painel de acessibilidade">
+    <button class="a11y-close" id="a11yClose" aria-label="Fechar painel">✕</button>
+    <h2>Acessibilidade</h2>
+    <p class="sub">Ajustes reais, aplicados agora nesta página.</p>
+
+    <button class="a11y-listen" id="a11yListen"><svg class="listen-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".55"/></svg>Ouvir esta página</button>
+
+    <div class="a11y-group a11y-profiles">
+      <span class="lbl">Perfis rápidos</span>
+      <div class="a11y-row">
+        <button data-profile="baixa-visao">Baixa visão</button>
+        <button data-profile="dislexia">Dislexia</button>
+        <button data-profile="mobilidade">Mobilidade reduzida</button>
+        <button data-profile="fotossensibilidade">Fotossensibilidade</button>
+      </div>
+      <p class="profile-note">Cada perfil liga vários ajustes de uma vez — você ainda pode ligar ou desligar qualquer um deles abaixo, individualmente.</p>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>Visão</span>
+      <div class="a11y-group">
+        <span class="lbl">Tamanho do texto</span>
+        <div class="a11y-row">
+          <button id="fontDec" data-font="dec" aria-label="Diminuir fonte">A−</button>
+          <button id="fontReset" data-font="reset" aria-label="Fonte padrão">A</button>
+          <button id="fontInc" data-font="inc" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="lbl">Contraste e cursor</span>
+        <div class="a11y-row">
+          <button data-toggle="high-contrast">Alto contraste</button>
+          <button data-motor="cursor" aria-pressed="false">Cursor grande</button>
+          <button data-motor="focus" aria-pressed="false">Foco grande</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="lbl">Paletas para os 7 tipos de daltonismo</span>
+        <div class="a11y-row" id="cbRow">
+          <button data-cb="none" class="active">Padrão</button>
+          <button data-cb="cb-protanopia">Protanopia</button>
+          <button data-cb="cb-protanomalia">Protanomalia</button>
+          <button data-cb="cb-deuteranopia">Deuteranopia</button>
+          <button data-cb="cb-deuteranomalia">Deuteranomalia</button>
+          <button data-cb="cb-tritanopia">Tritanopia</button>
+          <button data-cb="cb-tritanomalia">Tritanomalia</button>
+          <button data-cb="cb-acromatopsia">Acromatopsia</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="10" y1="22" x2="14" y2="22" stroke="currentColor" stroke-width="1.6"/></svg>Cognição e leitura</span>
+      <div class="a11y-group">
+        <span class="lbl">Leitura e movimento</span>
+        <div class="a11y-row">
+          <button data-toggle="dyslexia-mode">Fonte p/ dislexia</button>
+          <button data-toggle="reduce-motion">Reduzir movimento</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="lbl">Epilepsia / fotossensibilidade</span>
+        <div class="a11y-row">
+          <button id="epilepsyToggle" class="epilepsy-btn">Modo seguro (muda tudo)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>Mobilidade</span>
+      <div class="a11y-group">
+        <div class="a11y-row">
+          <button data-motor="targets" aria-pressed="false">Toque ampliado</button>
+          <button data-motor="spacing" aria-pressed="false">Espaçamento</button>
+        </div>
+        <div class="a11y-row">
+          <button data-motor="gestures" aria-pressed="false">Sem gestos</button>
+          <button data-motor="confirm" aria-pressed="false">Confirmar ações</button>
+        </div>
+        <div class="a11y-row">
+          <button data-motor="time" aria-pressed="false">Tempo estendido</button>
+          <button data-toggle="big-click">Cliques maiores</button>
+        </div>
+        <button class="motor-all-btn" id="motorAllBtn" type="button">Ativar todas as opções recomendadas</button>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="6" y1="10" x2="6" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="10" x2="10" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7" y1="14" x2="17" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegação</span>
+      <div class="a11y-group">
+        <span class="lbl">Foco e teclado</span>
+        <div class="a11y-row">
+          <button data-toggle="link-highlight">Destacar links</button>
+        </div>
+        <p class="cat-note">A navegação completa por Tab e o indicador de foco visível já funcionam em toda a página, sempre — não são um botão para ligar.</p>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>Comunicação</span>
+      <div class="a11y-group">
+        <button class="a11y-libras-btn" id="librasOpenBtn" aria-haspopup="dialog" aria-controls="librasPanel">
+          <svg class="lt-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>
+          <span>Ativar Libras<small>Abre o intérprete em uma janela à parte</small></span>
+        </button>
+      </div>
+    </div>
+
+    <button class="a11y-reset" id="a11yReset">Restaurar tudo</button>
+  </div>
+</div>
+
+<div class="narrator-bar" id="narratorBar">
+  <div class="nb-progress" id="nbProgress"></div>
+  <button id="nbPlayPause" aria-label="Pausar leitura">⏸</button>
+  <div class="nb-info">
+    <div class="nb-label">Ouvindo esta página</div>
+    <div class="nb-text" id="nbText">Início</div>
+  </div>
+  <button id="nbStop" aria-label="Parar leitura">✕</button>
+</div>
+<script src="motor.js"></script>
+<script src="script.js"></script>
+
+<div class="libras-panel size-md pos-br" id="librasPanel" role="dialog" aria-label="Intérprete de Libras" aria-hidden="true">
+  <div class="lp-header">
+    <svg class="lt-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>
+    <div class="lp-title"><strong id="lpTitle">Libras</strong><span>Convive &middot; intérprete</span></div>
+    <button id="lpMinimize" aria-label="Minimizar painel de Libras">&#8211;</button>
+    <button id="lpClose" aria-label="Fechar painel de Libras">&#10005;</button>
+  </div>
+  <div class="lp-body">
+    <div class="lp-stage" id="lpStage">
+      <div class="lp-placeholder"><svg class="lt-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg><p>Selecione um trecho com "Ver em Libras" para carregar o conteúdo.</p></div>
+    </div>
+    <div class="lp-controls">
+      <button id="lpPlay" aria-label="Reproduzir">&#9654;</button>
+      <button id="lpRestart" aria-label="Reiniciar">&#8635;</button>
+      <div class="lp-progress" id="lpProgress"><div class="lp-progress-fill" id="lpProgressFill"></div></div>
+      <button class="lp-speed" id="lpSpeedBtn">1x</button>
+      <button id="lpFullscreen" aria-label="Tela cheia">&#9974;</button>
+    </div>
+    <p class="lp-caption" id="lpCaption"></p>
+
+    <button class="lp-settings-toggle" id="lpSettingsToggle" aria-expanded="false" aria-controls="lpSettings">Configurações do intérprete</button>
+    <div class="lp-settings" id="lpSettings">
+      <span class="lbl">Tamanho</span>
+      <div class="lp-set-row">
+        <button data-libras-size="sm">Pequeno</button>
+        <button data-libras-size="md" class="active">Médio</button>
+        <button data-libras-size="lg">Grande</button>
+      </div>
+      <span class="lbl">Posição</span>
+      <div class="lp-set-row">
+        <button data-libras-pos="br" class="active">Inf. direito</button>
+        <button data-libras-pos="bl">Inf. esquerdo</button>
+        <button data-libras-pos="tr">Sup. direito</button>
+      </div>
+      <span class="lbl">Reprodução</span>
+      <div class="lp-set-row">
+        <button data-libras-play="manual" class="active">Manual</button>
+        <button data-libras-play="auto">Automática</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div vw class="enabled vlibras-dock">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }
+</script>
+
+<script src="libras-data.js"></script>
+<script src="libras.js"></script>
+</body>
+</html>

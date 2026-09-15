@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#14171F">
+<title>Equipe — Convive</title>
+<meta name="description" content="A equipe por trás do projeto Convive.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="libras.css">
+<link rel="stylesheet" href="motor.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="brand-icon" viewBox="0 0 24 24">
+      <circle cx="9" cy="12" r="7.5"/>
+      <circle cx="15" cy="12" r="7.5" opacity=".55"/>
+    </symbol>
+    <symbol id="inclusion-icon" viewBox="0 0 100 100">
+      <circle class="ii-ring" cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="4" pathLength="1"/>
+      <path class="ii-line" d="M21 37 Q50 59 79 37" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <path class="ii-line" d="M23 38 L63 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <path class="ii-line" d="M77 38 L37 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <path class="ii-line" d="M36 81 Q50 87 64 81" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" pathLength="1"/>
+      <circle class="ii-node" cx="50" cy="17" r="13" fill="var(--paper)" stroke="var(--paper)" stroke-width="7"/>
+      <circle class="ii-node ii-fill" cx="50" cy="17" r="11"/>
+      <circle class="ii-node" cx="21" cy="37" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="21" cy="37" r="7"/>
+      <circle class="ii-node" cx="79" cy="37" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="79" cy="37" r="7"/>
+      <circle class="ii-node" cx="36" cy="81" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="36" cy="81" r="7"/>
+      <circle class="ii-node" cx="64" cy="81" r="9" fill="var(--paper)" stroke="var(--paper)" stroke-width="6"/>
+      <circle class="ii-node ii-fill" cx="64" cy="81" r="7"/>
+    </symbol>
+  </defs>
+</svg>
+<a href="#main" class="skip-link">Pular para o conteúdo</a>
+<div class="intro-loader" id="introLoader">
+  <button class="intro-skip" id="introSkip" type="button">Pular introdução</button>
+  <div class="intro-content" aria-hidden="true">
+    <svg class="intro-inclusion" id="introInclusion" viewBox="0 0 100 100"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>
+    <span class="intro-mark" id="introMark"><svg class="spark" viewBox="0 0 24 24"><use href="#brand-icon" xlink:href="#brand-icon"></use></svg><span id="introMarkText">Convive</span></span>
+    <p class="intro-tagline" id="introTagline">Conhecimento para todos, do jeito de cada um.</p>
+  </div>
+</div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<header class="topbar">
+  <div class="wrap bar">
+    <a href="index.html" class="brand"><span class="mk"><svg class="spark" viewBox="0 0 24 24"><use href="#brand-icon" xlink:href="#brand-icon"></use></svg></span>Convive</a>
+    <button class="navtoggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path class="bar bar1" d="M3 7h18" stroke="#14171F" stroke-width="1.8" stroke-linecap="round"/>
+        <path class="bar bar2" d="M3 12h18" stroke="#14171F" stroke-width="1.8" stroke-linecap="round"/>
+        <path class="bar bar3" d="M3 17h18" stroke="#14171F" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <nav class="navlinks" id="navLinks">
+      <a href="index.html">Início</a>
+      <a href="missao.html">Missão</a>
+      <a href="acessibilidade.html">Acessibilidade</a>
+      <a href="tecnologia.html">Tecnologia</a>
+      <a href="equipe.html" aria-current="page">Equipe</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+<div class="cb-banner" id="cbBanner" role="status" aria-live="polite">🎨 <span id="cbBannerText">Modo de cor ativo</span></div>
+<div class="epilepsy-banner" id="epilepsyBanner" role="status" aria-live="polite">⚠️ <span id="epilepsyBannerText">Modo epilepsia ativo</span></div>
+<main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <h1>Sete pessoas, um propósito</h1>
+      <p>A equipe por trás do Convive e a função de cada integrante no projeto.</p>
+      <button class="page-listen" id="pageListen4"><svg class="listen-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".55"/></svg>Ouvir esta página</button>
+    </div>
+  </div>
+  <section data-narrate="Equipe e créditos">
+    <div class="wrap">
+      <h2 class="sr-only">Integrantes da equipe</h2>
+      <div class="team-grid">
+        <div class="team-card"><div class="av">I</div><span class="role">Front-end · UI/UX</span><h3>Iza</h3></div>
+        <div class="team-card"><div class="av">B</div><span class="role">Front-end · UI/UX</span><h3>Blumenthal</h3></div>
+        <div class="team-card"><div class="av">L</div><span class="role">Back-end · API</span><h3>Lukas</h3></div>
+        <div class="team-card"><div class="av">E</div><span class="role">Back-end · API</span><h3>Emanuel</h3></div>
+        <div class="team-card"><div class="av">P</div><span class="role">Voz · Testes TTS</span><h3>Pietro Aro</h3></div>
+        <div class="team-card"><div class="av">E</div><span class="role">Banco de dados</span><h3>Enzo</h3></div>
+        <div class="team-card"><div class="av">R</div><span class="role">Documentação</span><h3>Rafael</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface);" data-narrate="Como o time se organizou">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Divisão de trabalho</span>
+        <h2>Sete papéis, um só projeto</h2>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box"><h3>Front-end · UI/UX</h3><p>Interface, componentes visuais e a implementação dos recursos de acessibilidade que aparecem na tela.</p></div>
+        <div class="stat-box"><h3>Back-end · API</h3><p>Estrutura de servidor e API prevista para as próximas fases do projeto, além da lógica de integração.</p></div>
+        <div class="stat-box"><h3>Voz, dados e documentação</h3><p>Curadoria da leitura por voz, modelagem do banco de dados e redação de todo o material de apresentação.</p></div>
+      </div>
+      <p style="color:var(--ink-soft); font-size:14px; margin-top:20px; max-width:70ch;">Cada dupla ou pessoa acompanhou de perto as decisões das outras frentes — um recurso de acessibilidade quase sempre exige mudança simultânea de interface, lógica e, às vezes, conteúdo. O cronograma completo, com os meses de cada etapa, está na página de <a href="tecnologia.html">Tecnologia</a>.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <span class="fb"><svg class="spark" viewBox="0 0 24 24"><use href="#brand-icon" xlink:href="#brand-icon"></use></svg>Convive</span>
+        <p>Inclusão explicada e demonstrada na prática — não só descrita. Um projeto de acessibilidade digital feito por estudantes, para estudantes.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-h">Navegue</span>
+        <a href="missao.html">Missão</a>
+        <a href="acessibilidade.html">Acessibilidade</a>
+        <a href="tecnologia.html">Tecnologia</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-h">Projeto</span>
+        <a href="equipe.html">Equipe</a>
+        <a href="contato.html">Contato</a>
+        <a href="legislacao.html">Legislação</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="fm">Feira Tecnológica 2026 — ETEC Guariba · Programação para Internet</span>
+      <span class="fm">Código aberto · sem coleta de dados pessoais</span>
+    </div>
+  </div>
+</footer>
+<div class="toast-wrap" id="toastWrap" role="status" aria-live="polite"></div>
+
+<button class="totop" id="toTop" aria-label="Voltar ao topo">↑</button>
+
+<div class="a11y-bar">
+  <button class="a11y-fab" id="a11yFab" aria-label="Abrir painel de acessibilidade" aria-expanded="false"><svg class="fab-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg></button>
+  <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Painel de acessibilidade">
+    <button class="a11y-close" id="a11yClose" aria-label="Fechar painel">✕</button>
+    <h2>Acessibilidade</h2>
+    <p class="sub">Ajustes reais, aplicados agora nesta página.</p>
+
+    <button class="a11y-listen" id="a11yListen"><svg class="listen-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".55"/></svg>Ouvir esta página</button>
+
+    <div class="a11y-group a11y-profiles">
+      <span class="lbl">Perfis rápidos</span>
+      <div class="a11y-row">
+        <button data-profile="baixa-visao">Baixa visão</button>
+        <button data-profile="dislexia">Dislexia</button>
+        <button data-profile="mobilidade">Mobilidade reduzida</button>
+        <button data-profile="fotossensibilidade">Fotossensibilidade</button>
+      </div>
+      <p class="profile-note">Cada perfil liga vários ajustes de uma vez — você ainda pode ligar ou desligar qualquer um deles abaixo, individualmente.</p>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></svg>Visão</span>
+      <div class="a11y-group">
+        <span class="lbl">Tamanho do texto</span>
+        <div class="a11y-row">
+          <button id="fontDec" data-font="dec" aria-label="Diminuir fonte">A−</button>
+          <button id="fontReset" data-font="reset" aria-label="Fonte padrão">A</button>
+          <button id="fontInc" data-font="inc" aria-label="Aumentar fonte">A+</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="lbl">Contraste e cursor</span>
+        <div class="a11y-row">
+          <button data-toggle="high-contrast">Alto contraste</button>
+          <button data-motor="cursor" aria-pressed="false">Cursor grande</button>
+          <button data-motor="focus" aria-pressed="false">Foco grande</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="lbl">Paletas para os 7 tipos de daltonismo</span>
+        <div class="a11y-row" id="cbRow">
+          <button data-cb="none" class="active">Padrão</button>
+          <button data-cb="cb-protanopia">Protanopia</button>
+          <button data-cb="cb-protanomalia">Protanomalia</button>
+          <button data-cb="cb-deuteranopia">Deuteranopia</button>
+          <button data-cb="cb-deuteranomalia">Deuteranomalia</button>
+          <button data-cb="cb-tritanopia">Tritanopia</button>
+          <button data-cb="cb-tritanomalia">Tritanomalia</button>
+          <button data-cb="cb-acromatopsia">Acromatopsia</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.7V17a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.3A7 7 0 0 0 12 2z" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="10" y1="22" x2="14" y2="22" stroke="currentColor" stroke-width="1.6"/></svg>Cognição e leitura</span>
+      <div class="a11y-group">
+        <span class="lbl">Leitura e movimento</span>
+        <div class="a11y-row">
+          <button data-toggle="dyslexia-mode">Fonte p/ dislexia</button>
+          <button data-toggle="reduce-motion">Reduzir movimento</button>
+        </div>
+      </div>
+      <div class="a11y-group">
+        <span class="lbl">Epilepsia / fotossensibilidade</span>
+        <div class="a11y-row">
+          <button id="epilepsyToggle" class="epilepsy-btn">Modo seguro (muda tudo)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>Mobilidade</span>
+      <div class="a11y-group">
+        <div class="a11y-row">
+          <button data-motor="targets" aria-pressed="false">Toque ampliado</button>
+          <button data-motor="spacing" aria-pressed="false">Espaçamento</button>
+        </div>
+        <div class="a11y-row">
+          <button data-motor="gestures" aria-pressed="false">Sem gestos</button>
+          <button data-motor="confirm" aria-pressed="false">Confirmar ações</button>
+        </div>
+        <div class="a11y-row">
+          <button data-motor="time" aria-pressed="false">Tempo estendido</button>
+          <button data-toggle="big-click">Cliques maiores</button>
+        </div>
+        <button class="motor-all-btn" id="motorAllBtn" type="button">Ativar todas as opções recomendadas</button>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="6" y1="10" x2="6" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="10" x2="10" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="10" x2="14" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7" y1="14" x2="17" y2="14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Navegação</span>
+      <div class="a11y-group">
+        <span class="lbl">Foco e teclado</span>
+        <div class="a11y-row">
+          <button data-toggle="link-highlight">Destacar links</button>
+        </div>
+        <p class="cat-note">A navegação completa por Tab e o indicador de foco visível já funcionam em toda a página, sempre — não são um botão para ligar.</p>
+      </div>
+    </div>
+
+    <div class="a11y-category">
+      <span class="cat-h"><svg class="cat-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>Comunicação</span>
+      <div class="a11y-group">
+        <button class="a11y-libras-btn" id="librasOpenBtn" aria-haspopup="dialog" aria-controls="librasPanel">
+          <svg class="lt-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>
+          <span>Ativar Libras<small>Abre o intérprete em uma janela à parte</small></span>
+        </button>
+      </div>
+    </div>
+
+    <button class="a11y-reset" id="a11yReset">Restaurar tudo</button>
+  </div>
+</div>
+
+<div class="narrator-bar" id="narratorBar">
+  <div class="nb-progress" id="nbProgress"></div>
+  <button id="nbPlayPause" aria-label="Pausar leitura">⏸</button>
+  <div class="nb-info">
+    <div class="nb-label">Ouvindo esta página</div>
+    <div class="nb-text" id="nbText">Início</div>
+  </div>
+  <button id="nbStop" aria-label="Parar leitura">✕</button>
+</div>
+<script src="motor.js"></script>
+<script src="script.js"></script>
+
+<div class="libras-panel size-md pos-br" id="librasPanel" role="dialog" aria-label="Intérprete de Libras" aria-hidden="true">
+  <div class="lp-header">
+    <svg class="lt-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg>
+    <div class="lp-title"><strong id="lpTitle">Libras</strong><span>Convive &middot; intérprete</span></div>
+    <button id="lpMinimize" aria-label="Minimizar painel de Libras">&#8211;</button>
+    <button id="lpClose" aria-label="Fechar painel de Libras">&#10005;</button>
+  </div>
+  <div class="lp-body">
+    <div class="lp-stage" id="lpStage">
+      <div class="lp-placeholder"><svg class="lt-icon" viewBox="0 0 100 100" aria-hidden="true"><use href="#inclusion-icon" xlink:href="#inclusion-icon"></use></svg><p>Selecione um trecho com "Ver em Libras" para carregar o conteúdo.</p></div>
+    </div>
+    <div class="lp-controls">
+      <button id="lpPlay" aria-label="Reproduzir">&#9654;</button>
+      <button id="lpRestart" aria-label="Reiniciar">&#8635;</button>
+      <div class="lp-progress" id="lpProgress"><div class="lp-progress-fill" id="lpProgressFill"></div></div>
+      <button class="lp-speed" id="lpSpeedBtn">1x</button>
+      <button id="lpFullscreen" aria-label="Tela cheia">&#9974;</button>
+    </div>
+    <p class="lp-caption" id="lpCaption"></p>
+
+    <button class="lp-settings-toggle" id="lpSettingsToggle" aria-expanded="false" aria-controls="lpSettings">Configurações do intérprete</button>
+    <div class="lp-settings" id="lpSettings">
+      <span class="lbl">Tamanho</span>
+      <div class="lp-set-row">
+        <button data-libras-size="sm">Pequeno</button>
+        <button data-libras-size="md" class="active">Médio</button>
+        <button data-libras-size="lg">Grande</button>
+      </div>
+      <span class="lbl">Posição</span>
+      <div class="lp-set-row">
+        <button data-libras-pos="br" class="active">Inf. direito</button>
+        <button data-libras-pos="bl">Inf. esquerdo</button>
+        <button data-libras-pos="tr">Sup. direito</button>
+      </div>
+      <span class="lbl">Reprodução</span>
+      <div class="lp-set-row">
+        <button data-libras-play="manual" class="active">Manual</button>
+        <button data-libras-play="auto">Automática</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div vw class="enabled vlibras-dock">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }
+</script>
+
+<script src="libras-data.js"></script>
+<script src="libras.js"></script>
+</body>
+</html>

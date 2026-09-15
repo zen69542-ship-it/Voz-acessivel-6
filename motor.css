@@ -1,0 +1,52 @@
+
+html.motor-targets .btn,
+html.motor-targets button,
+html.motor-targets .navlinks a,
+html.motor-targets .libras-trigger,
+html.motor-targets input[type="text"],
+html.motor-targets input[type="email"],
+html.motor-targets select,
+html.motor-targets textarea{
+  min-height:48px; min-width:48px; padding:14px 18px;
+}
+html.motor-targets .a11y-row button{min-height:46px;}
+html.motor-targets .navtoggle{min-width:48px; min-height:48px;}
+html.motor-targets .totop{width:56px; height:56px;}
+html.motor-targets .a11y-fab{width:64px; height:64px;}
+html.motor-targets .fab-icon{width:32px; height:32px;}
+html.motor-targets .lp-controls button{min-width:44px; min-height:44px;}
+html.motor-targets .nav-card{padding:32px 26px;}
+
+html.motor-spacing .navlinks{gap:22px;}
+html.motor-spacing .a11y-row{gap:14px;}
+html.motor-spacing .nav-grid, html.motor-spacing .cat-grid, html.motor-spacing .team-grid, html.motor-spacing .stack-grid{gap:6px;}
+html.motor-spacing .form-grid{gap:26px;}
+html.motor-spacing .lp-controls{gap:16px;}
+html.motor-spacing .lp-set-row{gap:10px;}
+html.motor-spacing footer .wrap{gap:24px;}
+
+.confirm-armed{background:var(--accent-warm) !important; border-color:var(--accent-warm) !important; color:#fff !important;}
+
+html.motor-cursor, html.motor-cursor *{
+  cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M6 3 L6 34 L14 27 L19 36 L24 33.5 L19 25 L30 25 Z' fill='%2314171F' stroke='%23FAF9F6' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 6 3, auto !important;
+}
+
+html.motor-focus a:focus-visible,
+html.motor-focus button:focus-visible,
+html.motor-focus input:focus-visible,
+html.motor-focus select:focus-visible,
+html.motor-focus textarea:focus-visible,
+html.motor-focus [tabindex]:focus-visible{
+  outline:4px solid var(--accent-warm) !important;
+  outline-offset:4px !important;
+  box-shadow:0 0 0 9px rgba(15,124,122,.22) !important;
+}
+
+.toast-close{background:none; border:none; color:inherit; opacity:.75; cursor:pointer; font-size:13px; padding:2px 4px; margin-left:auto; flex-shrink:0;}
+.toast-close:hover{opacity:1;}
+
+.motor-all-btn{width:100%; margin-top:8px; background:var(--ink); color:#fff; border:none; padding:12px; font-size:13px; font-weight:600; cursor:pointer; font-family:'Public Sans',sans-serif;}
+.motor-all-btn:hover{background:var(--accent);}
+.motor-all-btn.active{background:var(--accent-warm);}
+
+html.reduce-motion .confirm-armed, html.epilepsy-safe .confirm-armed{transition:none;}
